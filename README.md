@@ -24,27 +24,26 @@ Components are .NET classes built into .NET assemblies that:
 The component class is usually written in the form of a Razor markup page with a .razor file extension. Components in Blazor are formally referred to as Razor components. Razor is a syntax for combining HTML markup with C# code designed for developer productivity. Razor allows you to switch between HTML markup and C# in the same file with IntelliSense support. Razor Pages and MVC also use Razor. Unlike Razor Pages and MVC, which are built around a request/response model, components are used specifically for client-side UI logic and composition.
 
 The following Razor markup demonstrates a component (Dialog.razor), which can be nested within another component:
-    ```html
-    <div>
-      <h1>@Title</h1>
-      @ChildContent
-      <button @onclick="OnYes">Yes!</button>
-    </div>
+  ```html
+  <div>
+     <h1>@Title</h1>
+     @ChildContent
+     <button @onclick="OnYes">Yes!</button>
+   </div>
 
-    @code {
-      [Parameter]
-      private string Title { get; set; }
-      
-      [Parameter]
-      private RenderFragment ChildContent { get; set; }
-      
-      private void OnYes()
-      {
-        Console.WriteLine("Write to the console in C#! 'Yes' button was selected.");
-      }
-    }
-    ```
-    
+  @code {
+     [Parameter]
+     private string Title { get; set; }
+     
+     [Parameter]
+     private RenderFragment ChildContent { get; set; }
+     
+     private void OnYes()
+     {
+       Console.WriteLine("Write to the console in C#! 'Yes' button was selected.");
+     }
+  }
+  ```    
 The dialog's body content (ChildContent) and title (Title) are provided by the component that uses this component in its UI. OnYes is a C# method triggered by the button's onclick event.
 
 Blazor uses natural HTML tags for UI composition. HTML elements specify components, and a tag's attributes pass values to a component's properties.
