@@ -1,4 +1,4 @@
-# Introduction to Blazor
+# Introduction to Blazor <img src="https://github.com/levonaramyan/Blazor_Learning_Material_Arm/blob/master/Blazor_logo.png" align="right" width="150px" height="150px" />
 Blazor is a framework for building interactive client-side web UI with .NET:
   - Create rich interactive UIs using C# instead of JavaScript.
   - Share server-side and client-side app logic written in .NET.
