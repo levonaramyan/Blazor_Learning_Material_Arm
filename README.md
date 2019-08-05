@@ -96,5 +96,9 @@ The connection used by Blazor server-side to communicate with the browser is als
 <img src="https://docs.microsoft.com/en-us/aspnet/core/blazor/index/_static/blazor-server-side.png?view=aspnetcore-3.0" alt="Blazor server-side runs .NET code on the server and interacts with the Document Object Model on the client over a SignalR connection" data-linktype="relative-path" class="x-hidden-focus">
 
 # JavaScript interop
+For apps that require third-party JavaScript libraries and access to browser APIs, components interoperate with JavaScript. Components are capable of using any library or API that JavaScript is able to use. C# code can call into JavaScript code, and JavaScript code can call into C# code. For more information, see ASP.NET Core Blazor JavaScript interop.
 
 # Code sharing and .NET Standard
+Blazor implements .NET Standard 2.0. .NET Standard is a formal specification of .NET APIs that are common across .NET implementations. .NET Standard class libraries can be shared across different .NET platforms, such as Blazor, .NET Framework, .NET Core, Xamarin, Mono, and Unity.
+
+APIs that aren't applicable inside of a web browser (for example, accessing the file system, opening a socket, and threading) throw a PlatformNotSupportedException.
