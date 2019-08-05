@@ -69,14 +69,31 @@ When this component is used in the app, IntelliSense in Visual Studio and Visual
 
 Components render into an in-memory representation of the browser's Document Object Model (DOM) called a render tree, which is used to update the UI in a flexible and efficient way.
 # Blazor client-side
+Blazor client-side is a single-page app framework for building interactive client-side web apps with .NET. Blazor client-side uses open web standards without plugins or code transpilation and works in all modern web browsers, including mobile browsers.
+
+Running .NET code inside web browsers is made possible by WebAssembly (abbreviated wasm). WebAssembly is a compact bytecode format optimized for fast download and maximum execution speed. WebAssembly is an open web standard and supported in web browsers without plugins.
+
+WebAssembly code can access the full functionality of the browser via JavaScript, called JavaScript interoperability (or JavaScript interop). .NET code executed via WebAssembly in the browser runs in the browser's JavaScript sandbox with the protections that the sandbox provides against malicious actions on the client machine.
+
+<img src="https://docs.microsoft.com/en-us/aspnet/core/blazor/index/_static/blazor-client-side.png?view=aspnetcore-3.0" alt="Blazor client-side runs .NET code in the browser with WebAssembly." data-linktype="relative-path" class="x-hidden-focus">
+
+When a Blazor client-side app is built and run in a browser:
+  - C# code files and Razor files are compiled into .NET assemblies.
+  - The assemblies and the .NET runtime are downloaded to the browser.
+  - Blazor client-side bootstraps the .NET runtime and configures the runtime to load the assemblies for the app. The Blazor client-side runtime uses JavaScript interop to handle DOM manipulation and browser API calls.
+
+The size of the published app, its payload size, is a critical performance factor for an app's useability. A large app takes a relatively long time to download to a browser, which diminishes the user experience. Blazor client-side optimizes payload size to reduce download times:
+  - Unused code is stripped out of the app when it's published by the Intermediate Language (IL) Linker.
+  - HTTP responses are compressed.
+  - The .NET runtime and assemblies are cached in the browser.
+
+# Blazor server-side
 Blazor decouples component rendering logic from how UI updates are applied. Blazor server-side provides support for hosting Razor components on the server in an ASP.NET Core app. UI updates are handled over a SignalR connection.
 
 The runtime handles sending UI events from the browser to the server and applies UI updates sent by the server back to the browser after running the components.
 
 The connection used by Blazor server-side to communicate with the browser is also used to handle JavaScript interop calls.
 <img src="https://docs.microsoft.com/en-us/aspnet/core/blazor/index/_static/blazor-server-side.png?view=aspnetcore-3.0" alt="Blazor server-side runs .NET code on the server and interacts with the Document Object Model on the client over a SignalR connection" data-linktype="relative-path" class="x-hidden-focus">
-
-# Blazor server-side
 
 # JavaScript interop
 
