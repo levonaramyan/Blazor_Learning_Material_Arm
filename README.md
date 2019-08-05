@@ -69,6 +69,12 @@ When this component is used in the app, IntelliSense in Visual Studio and Visual
 
 Components render into an in-memory representation of the browser's Document Object Model (DOM) called a render tree, which is used to update the UI in a flexible and efficient way.
 # Blazor client-side
+Blazor decouples component rendering logic from how UI updates are applied. Blazor server-side provides support for hosting Razor components on the server in an ASP.NET Core app. UI updates are handled over a SignalR connection.
+
+The runtime handles sending UI events from the browser to the server and applies UI updates sent by the server back to the browser after running the components.
+
+The connection used by Blazor server-side to communicate with the browser is also used to handle JavaScript interop calls.
+<img src="https://docs.microsoft.com/en-us/aspnet/core/blazor/index/_static/blazor-server-side.png?view=aspnetcore-3.0" alt="Blazor server-side runs .NET code on the server and interacts with the Document Object Model on the client over a SignalR connection" data-linktype="relative-path" class="x-hidden-focus">
 
 # Blazor server-side
 
