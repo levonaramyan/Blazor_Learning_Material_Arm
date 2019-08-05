@@ -24,7 +24,7 @@ Components are .NET classes built into .NET assemblies that:
 The component class is usually written in the form of a Razor markup page with a .razor file extension. Components in Blazor are formally referred to as Razor components. Razor is a syntax for combining HTML markup with C# code designed for developer productivity. Razor allows you to switch between HTML markup and C# in the same file with IntelliSense support. Razor Pages and MVC also use Razor. Unlike Razor Pages and MVC, which are built around a request/response model, components are used specifically for client-side UI logic and composition.
 
 The following Razor markup demonstrates a component (Dialog.razor), which can be nested within another component:
-    ```cs
+    ```html
     <div>
       <h1>@Title</h1>
       @ChildContent
@@ -52,7 +52,7 @@ Blazor uses natural HTML tags for UI composition. HTML elements specify componen
 In the following example, the Index component uses the Dialog component. ChildContent and Title are set by the attributes and content of the <Dialog> element.
 
 Index.razor:
-  ```cs
+  ```html
   @page "/"
   <h1>Hello, world!</h1>
   
@@ -64,7 +64,7 @@ Index.razor:
   ```
   
 The dialog is rendered when the parent (Index.razor) is accessed in a browser:
-<img src="index/_static/dialog.png?view=aspnetcore-3.0" alt="Dialog component rendered in the browser" data-linktype="relative-path" class="x-hidden-focus">
+<img src="https://docs.microsoft.com/en-us/aspnet/core/blazor/index/_static/dialog.png?view=aspnetcore-3.0" alt="Dialog component rendered in the browser" data-linktype="relative-path" class="x-hidden-focus">
 
 When this component is used in the app, IntelliSense in Visual Studio and Visual Studio Code speeds development with syntax and parameter completion.
 
